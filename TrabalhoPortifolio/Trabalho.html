@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: black;
+            padding: 1px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            border: 1px solid gray;
+
+        }
+
+        body {
+            background-color: black;
+            color: white;
+
+        }
+
+
+
+        a:hover,
+        a:active,
+        a:visited,
+        a:focus {
+            color: red;
+            text-decoration: unset;
+        }
+
+        nav {
+            background-color: black;
+            padding: 30px;
+            text-align: center;
+            font-size: 15px;
+            color: red;
+            border: 1px solid gray;
+        }
+
+        .container-resume>div {
+            display: none;
+        }
+
+        img {
+
+            width: 250px;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .container-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: solid grey 2px;
+            padding: 4px;
+
+        }
+
+        .container-left {
+
+            top: 0;
+            width: 75%;
+            bottom: 0;
+            left: 0;
+        }
+
+        .container-info {
+            position: relative;
+        }
+
+        .ChangePerson {
+            text-align: center
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+        .tabelele,
+        td,
+        th {
+            border: 1px solid grey;
+            border-collapse: collapse;
+
+        }
+
+        .tabelele {
+            width: 100%;
+        }
+    </style>
+
+    <script>
+
+        function hideEveryone() {
+            document.querySelectorAll(".container-resume > div")[0].setAttribute("style", "")
+            document.querySelectorAll(".container-resume > div")[1].setAttribute("style", "")
+        }
+
+        function showJustOne(idx) {
+            hideEveryone()
+            document.querySelectorAll(".container-resume > div")[idx].setAttribute("style", "display:block;")
+            if (idx === 0) {
+                document.querySelector("#titulo").textContent = "Julius"
+                document.querySelector("#forca").textContent = "28"
+                document.querySelector("#destreza").textContent = "10"
+                document.querySelector("#constituicao").textContent = "17"
+                document.querySelector("#inteligencia").textContent = "10"
+                document.querySelector("#sabedoria").textContent = "10"
+                document.querySelector("#carisma").textContent = "13"
+            }
+            else {
+                document.querySelector("#titulo").textContent = "Kenshin"
+                document.querySelector("#forca").textContent = "10"
+                document.querySelector("#destreza").textContent = "21"
+                document.querySelector("#constituicao").textContent = "10"
+                document.querySelector("#inteligencia").textContent = "22"
+                document.querySelector("#sabedoria").textContent = "10"
+                document.querySelector("#carisma").textContent = "11"
+            }
+        }
+
+
+        function carregaImagem() {
+            showJustOne(0);
+            setTiming();
+        }
+        function carregatabelas() {
+            setTiming();
+        }
+        function setTiming() {
+
+            var pos = 0;
+
+            setInterval(function () {
+                if (pos === 0)
+                    pos = 1
+                else
+                    pos = 0
+
+                showJustOne(pos)
+            }, 5000)
+
+        }
+
+        function setaImg(img){
+            console.log("img",img)
+            document.querySelector("#armas").src = img; 
+        }
+
+        function hideImg(){
+            document.querySelector("#armas").src = null
+        }
+
+    </script>
+</head>
+
+<body class="clearfix" onload="carregaImagem()">
+    <div class="clearfix">
+        <header id="topo">
+            <h1>Ficha Julius/Kenshin</h1>
+            <span id="Home"></span>
+        </header>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#Descrição Julius">Descrição Julius</a>
+            <a href="#Descrição Kenshin">Descrição Kenshin</a>
+            <a href="#Habilidades">Habilidades</a>
+            <a href="#Equipamentos">Equipamentos</a>
+        </nav>
+    </div>
+    <div class="clearfix">
+        <div class="clearfix container-info">
+            <div class="container-left">
+                <div id="DescricaoJulius">
+                    <h1>Descrição Julius</h1>
+
+                    <p>Julius Pierrus é um guerreido leal ao seu grupo mas neutro em suas decisões,
+                        normalmente não pensa muito antes de toma-las, e esta sempre dispost a fazer o que for preciso
+                        para
+                        manter seus colegas de grupo vivos
+                        mesmo que seja preciso deixa-los inconcientes para que não se matem entre si.
+
+                    </p>
+
+
+                    <p>
+                        Possui olhos castanho escuro, um metro e oitenta e cinco de altura, musculos definidos mas não
+                        exagerados,
+                        cabelos longos e negros como a noite.
+                        olheiras que fazem com que seus olhos pareçam mais sombrios.
+                    </p>
+                </div>
+
+
+                <div id="Descrição Kenshin">
+                    <h1>Descrição Kenshin</h1>
+
+                    <p>Kenshin é um ninja do clã Temu-ra e uma personalidade que habita o corpo de julius, portanto,
+                        possui a mesma aparência fisica de Julius. </p>
+
+
+                    <p>
+                        sempre tomando decisões de cabeça fria e com base no objetivo, faz o que for necessario para
+                        concluir
+                        uma missão
+                        mesmo que isso signifique ter que executar algum de seus colegas de equipe.
+                    </p>
+
+                    <p>
+                        Quando Ocorre a mudança de personalidade e Kenshin assume o corpo, suas roupas mudam para uma
+                        veste
+                        ninja, toda preta com uma armadura roxa.
+                        Suas armas se mantem em ambas as formas.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div>
+                        <span id="Habilidades"></span>
+                    <h1>Talentos e Habilidades de Classe/Raça</h1>
+                    
+                    <p>Julius: <br>
+                        Talentos: <br>
+                        Ataque Poderoso <br>
+                        Golpe com duas mãos <br>
+                        Trespassar <br>
+                        Trespassar aprimorado <br>
+                        Duro de matar <br>
+                        foco em arma(foice) <br>
+                        acerto critico aprimorado <br>
+                        especialização em arma <br>
+                        lutar as cegas <br>
+                        atropelar aprimorado <br>
+                        foco em armadura(medio) <br>
+                        especialização em armadura <br>
+                        vitalidade <br>
+                        ao sabor do destino <br>
+                        Foco em pericia(iniciativa) <br>
+
+                    </p>
+
+                    <p>Kenshin <br>
+
+                        Talentos: <br>
+                        Acuidade com armas <br>
+                        Foco em arma (ninjato) <br>
+                        Foco em arma aprimorado(ninjato) <br>
+                        Esquiva <br>
+                        Mobilidade <br>
+                        Ataque em Movimento <br>
+                        Ataque preciso <br>
+
+                        Habilidades de Classe:
+                        Passo do ninja <br>
+                        Esquiva engenhosa <br>
+                        Evasão <br>
+                        Dano desarmado <br>
+                        Sentir armadilhas <br>
+                        Truques ninja <br>
+                        Esquiva Sobrenatural <br>
+                        Destemido <br>
+                        Esquiva Sobrenatural aprimorada <br>
+                        Letalidade <br>
+                        Truque Rapido(durante Movimento) <br>
+                        Dano desarmado 1D10 <br>
+                    </p>
+
+
+
+                </div>
+
+
+                <div>
+                    <div>
+                        <h1>Equipamentos</h1>
+                        <span id="Equipamentos"></span>
+
+                        <div>
+                            <div style="float:left;">
+                                <p>Julius: <br>
+                                    Armas: <br>
+                                    <span onmouseout="hideImg()" onmouseover="setaImg('blackblade.jpeg')">foice</span> <br>
+                                    <br>
+                                    Armadura: <br>
+                                    Gibão de peles <br>
+                                    <br>
+                                    Dano: 2D6 +2 <br>
+                                    critico: 19-20 x4 <br>
+
+                                </p>
+
+
+
+                                <p>Kenshin: <br>
+                                    Armas: <br>
+                                    <span onmouseout="hideImg()" onmouseover="setaImg('ninjato.jpeg')">ninjato</span> <br>
+                                    <span onmouseout="hideImg()" onmouseover="setaImg('kusari.jpeg')">Kusarigama</span> <br>
+                                    <span onmouseout="hideImg()" onmouseover="setaImg('fuumaSjriken.jpeg')">Shuriken</span> <br>
+                                    <br>
+                                    Armadura/Escudos: <br>
+                                    Corselete de couro
+                                    <br>
+                                    Dano: <br>
+                                    ninjato 2d6 <br>
+                                    Kusarigama 1d6/d14 <br>
+                                    Shuriken 1d4 <br>
+                                    <br>
+                                    critico: <br>
+                                    ninjato: 19-20 x3 <br>
+                                    Kusari-gama: 19-20 x3 <br>
+                                </p>
+                            </div>
+                            <div style="float:left;">
+
+                                <img id="armas" style="object-fit: contain;" src="" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container-right">
+
+                <div class="ChangePerson">
+                    <span id="titulo"></span>
+
+                </div>
+                <aside class="container-resume clearfix">
+                    <div class="guerreiro">
+                        <img src="./images (12).jpeg" alt="">
+                    </div>
+                    <div class="ninja">
+                        <img src="./images (13).jpeg" alt="">
+                    </div>
+                </aside>
+
+                <table class="tabela tabelele">
+                    <tr>
+                        <th colspan="2">Nome</th>
+                    </tr>
+                    <tr>
+                        <td>Julius Pierrus</td>
+                        <td> Kenshin Temu-ra</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Atributos </th>
+                    </tr>
+                    <tr>
+                        <td>força</td>
+                        <td id="forca">28</td>
+                    </tr>
+                    <tr>
+                        <td>destreza</td>
+                        <td id="destreza">10</td>
+                    </tr>
+                    <tr>
+                        <td>constituição</td>
+                        <td id="constituicao">18</td>
+                    </tr>
+
+                    <tr>
+                        <td>inteligencia</td>
+                        <td id="inteligencia">10</td>
+                    </tr>
+                    <tr>
+                        <td>sabedoria</td>
+                        <td id="sabedoria">10</td>
+                    </tr>
+                    <tr>
+                        <td>carisma</td>
+                        <td id="carisma">24</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">tamanho</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">1,83m</th>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="    position: fixed;
+    bottom: 8px;
+    left: 50%;">
+        <a href="#topo">Voltar ao topo</a>
+    </div>
+</body>
+
+</html>
