@@ -15,3 +15,4 @@ https://trabalhoportifolio-wmktlwmgur.now.sh/
 - Entrar na pasta do projeto
 - Abrir o arquivo TrabalhoPortifolio.html
 
+Link Encurtado https://bit.ly/2zR6uJF
